@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Painting Store</title>
+    <style>
+        body { font-family: Arial; padding: 20px; }
+        .card { border: 1px solid #ccc; padding: 10px; width: 200px; margin: 10px; display: inline-block; text-align: center; }
+        img { width: 100%; height: 150px; object-fit: cover; }
+    </style>
+</head>
+<body>
+    <h1>🎨 Painting Store</h1>
+    {% for p in paintings %}
+        <div class="card">
+            <img src="{{ url_for('static', filename=p.img) }}">
+            <h3>{{ p.title }}</h3>
+            <p>{{ p.price }}</p>
+            <a href="/product/{{ p.id }}">View</a>
+        </div>
+    {% endfor %}
+</body>
+</html>

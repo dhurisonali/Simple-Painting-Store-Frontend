@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ painting.title }}</title>
+</head>
+<body>
+    <h1>{{ painting.title }}</h1>
+    <img src="{{ url_for('static', filename=painting.img) }}" width="300">
+    <p>Price: {{ painting.price }}</p>
+    <button>Add to Cart</button> | <a href="/">Back to Store</a>
+</body>
+</html>
